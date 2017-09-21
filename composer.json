@@ -1,0 +1,13 @@
+{
+    "name": "xiangang/simple-web-frame",
+    "description": "基于前端控制器模式设计的一简单的Web开发框架。",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xiangang",
+            "email": "weiseeu@gmail.com"
+        }
+    ],
+    "require": {}
+}
