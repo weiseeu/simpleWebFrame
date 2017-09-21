@@ -27,7 +27,11 @@ class Request
 
     function init(){
         if (isset($_SERVER['REQUEST_METHOD'])){
-            $this->properties = $_REQUEST;
+//            $this->properties = $_REQUEST;
+            $path = $_SERVER['PATH_INFO'];
+            $pathArray = explode('/',$path);
+            $this->properties['Controller']=$pathArray[1];
+            $this->properties['Method'] = $pathArray[2];
             return;
         }
 

@@ -32,27 +32,27 @@ class CommandResolver
      */
     public function getCommand(Request $request)
     {
-        $cmd = $request->getProperties('cmd');
+        $Controller = $request->getProperties('Controller');
         $sep = DIRECTORY_SEPARATOR;
-        if (!$cmd){
+        if (!$Controller){
             return self::$defaultCmd;
         }
-        $cmd = str_replace(['.',$sep],"",$cmd);
-        $filePath = "simpleWebFrame{$sep}command{$sep}{$cmd}.php";
-        $className = "simpleWebFrame\\command\\{$cmd}";
+        $Controller = str_replace(['.',$sep],"",$Controller);
+        $filePath = __DIR__."/{$Controller}.php";
+        $className = "simpleWebFrame\\command\\{$Controller}";
 
         if (file_exists($filePath)){
             @require_once("$filePath");
             if (class_exists($className)){
-                $cmdClass = new \ReflectionClass($className);
-                if ($cmdClass->isSubclassOf(self::$baseCmd)){
-                    return $cmdClass->newInstance();
+                $ControllerClass = new \ReflectionClass($className);
+                if ($ControllerClass->isSubclassOf(self::$baseCmd)){
+                    return $ControllerClass->newInstance();
                 }else{
-                    $request->addFeedback("command {$cmd} is not a Command!");
+                    $request->addFeedback("command {$Controller} is not a Command!");
                 }
             }
         }
-        $request->addFeedback("command {$cmd} is not found!");
+        $request->addFeedback("command {$Controller} is not found!");
         return clone self::$defaultCmd;
     }
 
