@@ -28,10 +28,18 @@ class Request
     function init(){
         if (isset($_SERVER['REQUEST_METHOD'])){
 //            $this->properties = $_REQUEST;
-            $path = $_SERVER['PATH_INFO'];
-            $pathArray = explode('/',$path);
-            $this->properties['Controller']=$pathArray[1];
-            $this->properties['Method'] = $pathArray[2];
+            if (key_exists('PATH_INFO',$_SERVER)){
+                $path = $_SERVER['PATH_INFO'];
+                $pathArray = explode('/',$path);
+                $paramNum = count($pathArray);
+                if ($paramNum>=2){
+                    $this->properties['Controller']=$pathArray[1];
+                    $this->properties['Method'] = $pathArray[2];
+                }elseif ($paramNum = 1){
+                    $this->properties['Controller']=$pathArray[1];
+                    $this->properties['Method'] = 'index';
+                }
+            }
             return;
         }
 
