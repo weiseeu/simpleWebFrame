@@ -6,12 +6,12 @@
  * Time: 下午3:01
  */
 
-namespace simpleWebFrame\command;
+namespace simpleWebFrame\controller;
 
 
 use simpleWebFrame\request\Request;
 
-class DefaultCommand extends Command
+class DefaultController extends Controller
 {
 
     function execute(Request $request)

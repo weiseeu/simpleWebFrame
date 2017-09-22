@@ -7,4 +7,4 @@
  */
 
 require_once '../../vendor/autoload.php';
-\simpleWebFrame\controller\BaseController::start();
+\simpleWebFrame\dispatcher\BaseDispatcher::start();

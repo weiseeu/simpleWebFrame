@@ -6,12 +6,12 @@
  * Time: 下午7:18
  */
 
-namespace simpleWebFrame\command;
+namespace simpleWebFrame\controller;
 
 
 use simpleWebFrame\request\Request;
 
-class ErrorCommand extends Command
+class ErrorController extends Controller
 {
 
     /**

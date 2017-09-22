@@ -6,13 +6,13 @@
  * Time: 下午4:15
  */
 
-namespace simpleWebFrame\command;
+namespace simpleWebFrame\controller;
 
 
 use simpleWebFrame\registry\ApplicationRegistry;
 use simpleWebFrame\request\Request;
 
-class Info extends Command
+class InfoController extends Controller
 {
 
     function dbInfo(Request $request)

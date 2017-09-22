@@ -6,12 +6,12 @@
  * Time: 下午2:59
  */
 
-namespace simpleWebFrame\command;
+namespace simpleWebFrame\controller;
 
 
 use simpleWebFrame\request\Request;
 
-abstract class Command
+abstract class Controller
 {
     final function __construct()
     {

@@ -2,19 +2,17 @@
 /**
  * Created by PhpStorm.
  * User: xiangang
- * Date: 2017/9/21
- * Time: 上午11:29
+ * Date: 2017/9/22
+ * Time: 上午9:39
  */
 
-namespace simpleWebFrame\controller;
+namespace simpleWebFrame\dispatcher;
 
-
-use simpleWebFrame\command\CommandResolver;
+use simpleWebFrame\controller\ControllerResolver;
 use simpleWebFrame\request\Request;
 
-class BaseController
+class BaseDispatcher
 {
-
     /**
      * BaseController constructor.
      */
@@ -28,8 +26,8 @@ class BaseController
 
     public function processRequest()
     {
-        $commandResolver = new CommandResolver();
+        $commandResolver = new ControllerResolver();
         $request = new Request();
-        $commandResolver->getCommand($request)->execute($request);
+        $commandResolver->getController($request)->execute($request);
     }
 }
