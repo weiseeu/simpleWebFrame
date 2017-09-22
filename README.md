@@ -23,6 +23,9 @@
 
 3. 将代码部署到本地Web服务器，把`simpleWebFrame\public`设置为`DocumentRoot`。可以使用PHP内置的Web服务器快速部署验证：进入到目录`simpleWebFrame\public`，运行命令`php -S localhost:8000`，启动成功之后，打开浏览器输入网址：`localhost:8000`即可看到欢迎页面！
 
+![welcome](welcome.png)
+
+
 4.  如果需要写新的`Controller`，在`controller`文件夹创建命名为`xxxController.php`的类即可
 
 ## 访问方法
