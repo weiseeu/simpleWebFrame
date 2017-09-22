@@ -27,7 +27,7 @@ class Request
 
     function init(){
         if (isset($_SERVER['REQUEST_METHOD'])){
-//            $this->properties = $_REQUEST;
+            $this->properties = $_REQUEST;
             if (key_exists('PATH_INFO',$_SERVER)){
                 $path = $_SERVER['PATH_INFO'];
                 $pathArray = explode('/',$path);
