@@ -30,7 +30,7 @@
 
 ## 访问方法
 
-如果在在`controller`文件夹创建命名为`InfoController.php`的类，同时在类中创建了`info()`方法，那么通过URL：`localhost:8000/Info/info`就能访问到改方法 
+如果在在`controller`文件夹创建命名为`InfoController.php`的类，同时在类中创建了`info()`方法，那么通过URL：`localhost:8000/Info/info`就能访问该方法 
 
 ## 后续
 
