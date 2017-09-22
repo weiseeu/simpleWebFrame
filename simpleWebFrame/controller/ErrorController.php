@@ -18,9 +18,9 @@ class ErrorController extends Controller
      * @param Request $request
      * @return mixed
      */
-    function doExecute(Request $request)
+    function execute(Request $request)
     {
         // TODO: Implement doExecute() method.
-        print_r("{$request->getProperties('Controller')} 类不存在！");
+        print_r("{$request->getFeedbackString()}");
     }
 }

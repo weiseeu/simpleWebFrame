@@ -11,7 +11,7 @@ namespace simpleWebFrame\controller;
 
 use simpleWebFrame\request\Request;
 
-abstract class Controller
+class Controller
 {
     final function __construct()
     {
@@ -19,7 +19,6 @@ abstract class Controller
 
     function execute(Request $request)
     {
-        // TODO: Implement doExecute() method.
         $methodName = $request->getProperties('Method');
         if (!method_exists($this,$methodName)){
             echo "调用的方法{$methodName}不存在！";

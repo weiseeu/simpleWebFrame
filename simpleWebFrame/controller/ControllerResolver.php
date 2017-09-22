@@ -50,11 +50,12 @@ class ControllerResolver
                 if ($ControllerClass->isSubclassOf(self::$baseController)){
                     return $ControllerClass->newInstance();
                 }else{
-                    $request->addFeedback("controller {$Controller} is not a Controller!");
+                    $request->addFeedback("控制器 {$Controller} 不是基类控制器Controller的子类!");
+                    return clone self::$errorController;
                 }
             }
         }
-        $request->addFeedback("controller {$Controller} is not found!");
+        $request->addFeedback("控制器类 {$Controller}Controller 没有找到!");
         return clone self::$errorController;
     }
 

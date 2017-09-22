@@ -32,10 +32,11 @@ class Request
                 $path = $_SERVER['PATH_INFO'];
                 $pathArray = explode('/',$path);
                 $paramNum = count($pathArray);
-                if ($paramNum>=2){
+                var_dump($paramNum);
+                if ($paramNum>=3){
                     $this->properties['Controller']=$pathArray[1];
                     $this->properties['Method'] = $pathArray[2];
-                }elseif ($paramNum = 1){
+                }elseif ($paramNum = 2){
                     $this->properties['Controller']=$pathArray[1];
                     $this->properties['Method'] = 'index';
                 }
