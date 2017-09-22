@@ -9,7 +9,18 @@
 namespace simpleWebFrame\command;
 
 
-class ErrorCommand
+use simpleWebFrame\request\Request;
+
+class ErrorCommand extends Command
 {
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    function doExecute(Request $request)
+    {
+        // TODO: Implement doExecute() method.
+        print_r("{$request->getProperties('Controller')} 类不存在！");
+    }
 }

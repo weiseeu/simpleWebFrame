@@ -48,15 +48,4 @@ class Info extends Command
         print_r(json_encode($info));
     }
 
-
-    function doExecute(Request $request)
-    {
-        // TODO: Implement doExecute() method.
-       $methodName = $request->getProperties('Method');
-       if (!method_exists($this,$methodName)){
-           echo "调用的方法{$methodName}不存在！";
-           return;
-       }
-       $this->$methodName($request);
-    }
 }

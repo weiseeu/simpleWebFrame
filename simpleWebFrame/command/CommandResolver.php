@@ -15,6 +15,7 @@ class CommandResolver
 {
     private static $baseCmd;
     private static $defaultCmd;
+    private static $errorCmd;
 
     /**
      * CommandResolver constructor.
@@ -23,6 +24,7 @@ class CommandResolver
         if (!self::$baseCmd){
             self::$baseCmd = new \ReflectionClass("\simpleWebFrame\command\Command");
             self::$defaultCmd = new DefaultCommand();
+            self::$errorCmd = new ErrorCommand();
         }
     }
 
@@ -42,7 +44,7 @@ class CommandResolver
         $className = "simpleWebFrame\\command\\{$Controller}";
 
         if (file_exists($filePath)){
-            @require_once("$filePath");
+            require_once("$filePath");
             if (class_exists($className)){
                 $ControllerClass = new \ReflectionClass($className);
                 if ($ControllerClass->isSubclassOf(self::$baseCmd)){
@@ -53,7 +55,7 @@ class CommandResolver
             }
         }
         $request->addFeedback("command {$Controller} is not found!");
-        return clone self::$defaultCmd;
+        return clone self::$errorCmd;
     }
 
 

@@ -14,7 +14,7 @@ use simpleWebFrame\request\Request;
 class DefaultCommand extends Command
 {
 
-    function doExecute(Request $request)
+    function execute(Request $request)
     {
         // TODO: Implement doExecute() method.
         include(dirname(__DIR__)."/view/welcome.php");
