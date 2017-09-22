@@ -6,7 +6,7 @@
 
 | 文件夹 | 用途 |
 | --- | --- |
-| controller | 存放用户编写的处理HTTP请求的类,其中`Controller.php`为控制器极类`ControllerResolver.php`为HTTP请求映射器 |
+| controller | 存放用户编写的处理HTTP请求的类,其中`Controller.php`为控制器基类`ControllerResolver.php`为HTTP请求映射器 |
 | config | 文件 `config.php`存放系统的配置信息，如数据库连接信息等 |
 | dispatcher | 统一处理接收的HTTP请求 |
 | public | 系统入口处，系统为单一入口文件`index.php` |
